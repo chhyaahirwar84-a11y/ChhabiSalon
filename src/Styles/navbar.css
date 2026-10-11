@@ -1,0 +1,178 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 90px;
+  padding: 0 5%;
+  color: #fff;
+}
+
+.navbar-logo {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  line-height: 1.1;
+}
+
+.navbar-logo span {
+  margin-top: 4px;
+  font-size: 7px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 35px);
+}
+
+.navbar-links > a:not(.navbar-appointment) {
+  position: relative;
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.navbar-links > a:not(.navbar-appointment)::after {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  left: 50%;
+  height: 1px;
+  background: #fff;
+  content: "";
+  transition: left 0.3s ease, right 0.3s ease;
+}
+
+.navbar-links > a:not(.navbar-appointment):hover::after {
+  right: 0;
+  left: 0;
+}
+
+.navbar-appointment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.navbar-appointment:hover {
+  background: #fff;
+  color: #1d1b19;
+}
+
+.navbar-appointment-mobile,
+.navbar-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    min-height: 80px;
+    padding: 0 6%;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 6% 22px;
+    background: #1d1b19;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 18px 25px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .navbar-links.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar-links > a:not(.navbar-appointment) {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 14px;
+  }
+
+  .navbar-links > a:not(.navbar-appointment)::after {
+    display: none;
+  }
+
+  .navbar-appointment-desktop {
+    display: none;
+  }
+
+  .navbar-appointment-mobile {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: 18px;
+  }
+
+  .navbar-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    min-height: 74px;
+    padding: 0 5%;
+  }
+
+  .navbar-logo {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .navbar-logo span {
+    font-size: 6px;
+    letter-spacing: 2.5px;
+  }
+
+  .navbar-links {
+    top: 74px;
+  }
+}

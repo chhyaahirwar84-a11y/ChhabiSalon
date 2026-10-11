@@ -1,0 +1,201 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 100px;
+
+  padding: 130px 8%;
+
+  background: #f5f1eb;
+}
+
+/* LEFT */
+
+.contact-intro h2 {
+  margin-top: 25px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.contact-intro h2 span {
+  display: block;
+  margin-left: 70px;
+  font-style: italic;
+}
+
+.contact-text {
+  max-width: 430px;
+  margin-top: 40px;
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #6d665e;
+}
+
+.contact-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 35px;
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #1d1b19;
+
+  font-size: 0.9rem;
+
+  transition: gap 0.3s ease;
+}
+
+.contact-phone:hover {
+  gap: 22px;
+}
+
+/* RIGHT */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-top: 1px solid rgba(29, 27, 25, 0.2);
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid rgba(29, 27, 25, 0.2);
+}
+
+.contact-detail > svg {
+  font-size: 1.2rem;
+  color: #6d665e;
+}
+
+.contact-detail div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contact-detail span {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #817a73;
+}
+
+.contact-detail a,
+.contact-detail p {
+  font-size: 0.9rem;
+  color: #1d1b19;
+}
+
+/* BOOKING BUTTON */
+
+.contact-booking {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 35px;
+  padding: 20px 24px;
+
+  background: #1d1b19;
+  color: #f5f1eb;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+
+  transition: transform 0.3s ease;
+}
+
+.contact-booking:hover {
+  transform: translateY(-4px);
+}
+
+.contact-booking svg {
+  font-size: 1.1rem;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 70px;
+
+    padding: 95px 7%;
+  }
+
+  .contact-intro h2 span {
+    margin-left: 40px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 75px 6%;
+    gap: 55px;
+  }
+
+  .contact-intro h2 {
+    font-size: 3.5rem;
+  }
+
+  .contact-intro h2 span {
+    margin-left: 25px;
+  }
+
+  .contact-text {
+    margin-top: 30px;
+  }
+
+  .contact-detail {
+    padding: 23px 0;
+  }
+}
+
+/* RESPONSIVE LAYOUT FIXES */
+
+.contact,
+.contact-intro,
+.contact-details,
+.contact-detail,
+.contact-detail > div {
+  min-width: 0;
+}
+
+.contact-intro h2 {
+  font-size: clamp(42px, 6vw, 96px);
+  overflow-wrap: normal;
+}
+
+@media (max-width: 600px) {
+  .contact-intro h2 {
+    font-size: clamp(40px, 10.5vw, 54px);
+    letter-spacing: -1px;
+  }
+
+  .contact-intro h2 span {
+    margin-left: clamp(8px, 5vw, 25px);
+  }
+
+  .contact-detail a,
+  .contact-detail p {
+    overflow-wrap: anywhere;
+  }
+
+  .contact-booking {
+    gap: 12px;
+    padding: 18px;
+  }
+}
+

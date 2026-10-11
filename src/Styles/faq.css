@@ -1,0 +1,157 @@
+.faq {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+
+  padding: 120px 8%;
+
+  background: #ebe4da;
+}
+
+/* HEADING */
+
+.faq-heading h2 {
+  margin-top: 25px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  color: #1d1b19;
+}
+
+.faq-heading h2 span {
+  display: block;
+  margin-left: 45px;
+  font-style: italic;
+}
+
+.faq-heading > p:last-child {
+  max-width: 300px;
+  margin-top: 35px;
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #6d665e;
+}
+
+/* FAQ LIST */
+
+.faq-list {
+  border-top: 1px solid rgba(29, 27, 25, 0.2);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(29, 27, 25, 0.2);
+}
+
+/* QUESTION */
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding: 25px 0;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-size: 0.95rem;
+  color: #1d1b19;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* ANSWER */
+
+.faq-answer {
+  max-width: 600px;
+  padding: 0 40px 25px 0;
+}
+
+.faq-answer p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #6d665e;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 90px 7%;
+  }
+
+  .faq-heading > p:last-child {
+    margin-top: 25px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .faq {
+    padding: 75px 6%;
+    gap: 45px;
+  }
+
+  .faq-heading h2 {
+    font-size: 3.2rem;
+  }
+
+  .faq-heading h2 span {
+    margin-left: 25px;
+  }
+
+  .faq-item summary {
+    padding: 22px 0;
+    font-size: 0.88rem;
+  }
+
+  .faq-answer {
+    padding-right: 20px;
+  }
+}
+
+/* RESPONSIVE LAYOUT FIXES */
+
+.faq,
+.faq-heading,
+.faq-list,
+.faq-item,
+.faq-item summary {
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .faq-heading h2 {
+    font-size: clamp(40px, 10.5vw, 52px);
+  }
+
+  .faq-heading h2 span {
+    margin-left: clamp(8px, 5vw, 25px);
+  }
+
+  .faq-item summary {
+    gap: 14px;
+    overflow-wrap: anywhere;
+  }
+}
+

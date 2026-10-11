@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+
+  background: #f5f1eb;
+  color: #1d1b19;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================
+   SMOOTH INTERACTIONS
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #1d1b19;
+  color: #f5f1eb;
+}
+
+/* Premium image interaction */
+
+.about-image img,
+.bridal-image img,
+.gallery-item img {
+  will-change: transform;
+}
+
+/* =========================================
+   PREMIUM PAGE ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* Service arrow */
+.service-link {
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.service-item:hover .service-link {
+  transform: rotate(45deg);
+}
+
+/* Images */
+.about-image img,
+.bridal-image img,
+.gallery-item img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-image:hover img,
+.bridal-image:hover img,
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Buttons */
+.hero-button,
+.about-link,
+.bridal-button,
+.contact-booking {
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.hero-button:hover,
+.about-link:hover,
+.bridal-button:hover,
+.contact-booking:hover {
+  transform: translateY(-3px);
+}
+
+/* FAQ */
+.faq-item {
+  transition: padding 0.3s ease;
+}
+
+.faq-item summary {
+  transition: padding 0.3s ease;
+}
+
+.faq-item:hover summary {
+  padding-left: 8px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* =========================
+   GLOBAL MOBILE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    overflow-wrap: break-word;
+  }
+
+}
+
+/* GLOBAL RESPONSIVE SAFETY */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+main,
+section,
+header,
+footer,
+nav,
+article,
+div {
+  min-width: 0;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+p,
+a,
+span,
+button {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  .services,
+  .about-content,
+  .bridal-content,
+  .gallery,
+  .testimonials,
+  .faq,
+  .contact,
+  .footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
